@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Assistant</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a2e6e2c259.js" crossorigin="anonymous"></script>
+
+    <!-- Viewport for mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2><i class="fas fa-robot"></i> AI Assistant</h2>
+
+        <form method="POST">
+            <label class="icon-label"><i class="fas fa-cogs"></i> Select Function:</label>
+            <select name="function">
+                <option value="answer">Answer Questions</option>
+                <option value="summarize">Summarize Text</option>
+                <option value="creative">Generate Creative Content</option>
+            </select>
+
+            <label class="icon-label"><i class="fas fa-keyboard"></i> Enter your input:</label>
+            <textarea name="user_input" rows="6" placeholder="Type your question, text, or prompt here..."></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <form method="POST" action="/feedback">
+            <label class="icon-label"><i class="fas fa-thumbs-up"></i> Was this helpful?</label>
+            <input type="text" name="feedback" placeholder="Your feedback here...">
+            <input type="submit" value="Submit Feedback">
+        </form>
+
+        {% if response %}
+            <div class="response">
+                <strong>Response:</strong>
+                <p>{{ response }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

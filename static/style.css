@@ -1,0 +1,107 @@
+:root {
+    --bg: #f4f6f8;
+    --card-bg: #fff;
+    --text: #333;
+    --input-bg: #fff;
+    --border: #ccc;
+    --primary: #4a90e2;
+    --hover: #357ab8;
+    --response-bg: #e8f4ff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --card-bg: #1e1e1e;
+        --text: #e0e0e0;
+        --input-bg: #2c2c2c;
+        --border: #444;
+        --primary: #4a90e2;
+        --hover: #357ab8;
+        --response-bg: #22344a;
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+select,
+textarea,
+input[type="text"] {
+    width: 100%;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--hover);
+}
+
+.response {
+    margin-top: 30px;
+    padding: 15px;
+    background: var(--response-bg);
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+}
+
+.icon-label i {
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 25px 20px;
+    }
+}
